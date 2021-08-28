@@ -1,0 +1,55 @@
+package media;
+
+public class test {
+	public static void main (String[]args){
+		int imgArr [][]=new int [][]{  {0,0,0,0,1,1,1,0},{0,0,0,0,0,0,0}}; 
+	
+	int freq=0;
+	String RLC="" ;
+	String r="";
+	boolean flag=false;
+
+	// write your logic here 
+	for(int i=0; i<imgArr.length;i++){
+		//r="("+" "+i;
+
+		for(int j=0;j<((imgArr[i]).length);j++){
+			if (imgArr[i][j]==1){
+				continue;
+				
+			}
+			else {
+				freq++;
+				if(imgArr[i].length==j+1 || imgArr[i][j+1]==1){
+					if(freq>0){
+				r=" "+((j+1)-freq)+" "+(j);
+				freq=0;
+				flag = true;
+				}
+				}
+		//}
+				//else{
+			//if (freq>0 && imgArr[i][j+1]==0 ){
+				//r=r+" "+((j+1)-freq)+" "+(j);
+				//freq=0;
+				//flag=true;
+			//}
+		//}
+			}
+				}
+		//if(r.length()>3){
+		if(flag==true){
+		//RLC=RLC+r+" "+")"+" ";
+		RLC=RLC+"("+" "+i+r+" "+")"+" ";
+		flag =false;
+		}
+	//}
+		//else {
+			//RLC=RLC.substring(0,RLC.length()-6);
+		//}
+		}
+   System.out.println(RLC);
+   //System.out.println(RLC.substring(0,RLC.length()-6));
+
+}
+}
